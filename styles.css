@@ -1,0 +1,98 @@
+/* styles.css */
+
+
+body {
+  
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  background-image: url(/assets/Stalkyard.png);
+  background-size: cover;
+  background-position: center; 
+  background-repeat: no-repeat; 
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.isma {
+font-size: 35px;
+color: #ccc;
+}
+
+.lambda {
+  font-size: 50px;
+  color: #8d4400;
+  text-shadow: 
+    1px 1px 0px black,
+    -1px -1px 0px black, 
+    1px -1px 0px black, 
+    -1px 1px 0px black; 
+}
+
+.container {
+  background-color: rgba(255, 123, 0, 0.247);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+}
+
+h1 {
+  color: #000000;
+}
+
+.input-area {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+input {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  background: #00ff9d;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button.hidden {
+  display: none;
+}
+
+button:hover {
+  background: #00ff00;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  margin: 5px 0;
+  background: #f1f1f1;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.hidden {
+  display: none;
+}
+
+
