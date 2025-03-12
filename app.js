@@ -9,8 +9,8 @@ const teamList = document.getElementById("team-list"); // Lista de teams
 // Lista de teams
 let teams = [];
 
-// Lista de maps
-const maps = [
+// Lista de mapas original
+const defaultMaps = [
   "Agony", "dabo", "farewell", "lost_village", "semonz", "ag_crossfire", "DARN", "fling",
   "lost_village2", "snark_pit", "ag_hidden_lab", "datacore", "frenzy", "moss", "stalkx",
   "boot_camp", "dm_dust2", "gasworks", "olvidada_muerte", "stalkyard", "bounce", "doublecross",
@@ -19,31 +19,60 @@ const maps = [
   "rustmill", "urethane", "crossfire", "endcamp", "last_call", "scary_1", "vengeance"
 ];
 
+// Lista de mapas LMBDA Tournament
+const lmbdaMaps = [
+  "agony", "awol", "ag_aztec", "ag_aztec2", "ag_crossfire", "ag_cbble", "ag_hidden_lab",
+  "ag_park", "ag_inferno", "battlegrounds", "boot_camp", "bounce", "boot_campx", "cabrito",
+  "cold_faces", "cyanidestalkyard", "crossfire", "datacore", "dabo", "darn", "de_railroad",
+  "dm_delve", "dm_dust", "dm_dust2", "dockingbay", "doublecross", "echo", "eden", "endcamp",
+  "endworld", "enix", "elixir", "farewell", "fling", "frenzied", "frenzy", "gasworks",
+  "havoc", "homeworld", "isotonic", "kabul", "last_call", "lambda_bunker", "lost_village",
+  "lost_village2", "moss", "no_remorse", "obsolete", "outcry", "olvidada_muerte", "pwrcore",
+  "rapidcore", "rebellion", "rats", "rustmill", "scary_1", "scary_2", "semonz", "stalkx",
+  "snark_pit", "stalkyard", "subtransit", "the_beach", "the_tube", "undertow", "undyz",
+  "urethane", "vengeance", "xbounce", "xbounce2"
+];
+
+
 // Agregar team
-addTeamButton.addEventListener("click", () => {
-  const teamName = teamInput.value.trim(); 
-  if (teamName !== "") {
-    teams.push(teamName); 
-    updateTeamList(); 
-    teamInput.value = "";
-  } else {
-    alert("Por favor, ingrese un nombre de team/player.");
+// Evento para agregar equipo al hacer clic en el botón
+addTeamButton.addEventListener("click", addTeam);
+
+// Evento para agregar equipo al presionar Enter
+teamInput.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    e.preventDefault(); // Evita que se envíe el formulario o se recargue la página
+    addTeam();
   }
 });
 
-
-function updateTeamList() {
-  teamList.innerHTML = ""; 
-  teams.forEach((team) => {
-    const li = document.createElement("li");
-    li.textContent = team;
-    teamList.appendChild(li);
-  });
+// Función para agregar un equipo
+function addTeam() {
+  const teamName = teamInput.value.trim(); // Obtener y limpiar el valor del input
+  if (teamName !== "") {
+    teams.push(teamName); // Agregar el equipo a la lista
+    updateTeamList(); // Actualizar la lista visualmente
+    teamInput.value = ""; // Limpiar el input
+  } else {
+    alert("Por favor, ingrese un nombre de team/player válido.");
+  }
 }
+
+
 
 // Realizar sorteo
 startDrawButton.addEventListener("click", () => {
-  const mapCount = parseInt(mapCountSelect.value);
+  const mapCount = parseInt(mapCountSelect.value); // Cantidad de mapas por cruce
+  const selectedMapPool = document.getElementById("map-pool").value; // Obtener selección de lista
+
+  // ✅ Asegurar que la lista seleccionada se use correctamente
+  let maps;
+  if (selectedMapPool === "lmbda") {
+    maps = [...lmbdaMaps]; // Copia de la lista LMBDA Tournament
+  } else {
+    maps = [...defaultMaps]; // Copia de la lista original
+  }
+
   if (teams.length < 2) {
     alert("Se necesitan al menos 2 teams/players para realizar el mixer.");
     return;
@@ -52,22 +81,21 @@ startDrawButton.addEventListener("click", () => {
   // Mezclar teams aleatoriamente
   const shuffledTeams = [...teams].sort(() => Math.random() - 0.5);
   const matches = [];
-  let remainingMaps = [...maps];
 
   // Crear cruces
   while (shuffledTeams.length > 1) {
     const team1 = shuffledTeams.pop();
     const team2 = shuffledTeams.pop();
 
-    // Asignar maps unicos
+    // ✅ Corregimos la selección aleatoria sin repetir
+    const availableMaps = [...maps]; // Copia para evitar problemas de repetición
     const assignedMaps = [];
+
     for (let i = 0; i < mapCount; i++) {
-      if (remainingMaps.length === 0) {
-        // Si no quedan mapas, reiniciar maplist
-        remainingMaps = [...maps];
-      }
-      const randomIndex = Math.floor(Math.random() * remainingMaps.length);
-      assignedMaps.push(remainingMaps.splice(randomIndex, 1)[0]); 
+      if (availableMaps.length === 0) break; // Evitar errores si hay pocos mapas
+      const randomIndex = Math.floor(Math.random() * availableMaps.length);
+      assignedMaps.push(availableMaps[randomIndex]);
+      availableMaps.splice(randomIndex, 1); // Eliminar el mapa ya usado
     }
 
     matches.push({ team1, team2, maps: assignedMaps });
@@ -75,6 +103,8 @@ startDrawButton.addEventListener("click", () => {
 
   displayResults(matches);
 });
+
+
 
 
 // Mostrar resultado
