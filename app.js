@@ -21,16 +21,15 @@ const defaultMaps = [
 
 // Lista de mapas LMBDA Tournament
 const lmbdaMaps = [
-  "agony", "awol", "ag_aztec", "ag_aztec2", "ag_crossfire", "ag_cbble", "ag_hidden_lab",
-  "ag_park", "ag_inferno", "battlegrounds", "boot_camp", "bounce", "boot_campx", "cabrito",
-  "cold_faces", "cyanidestalkyard", "crossfire", "datacore", "dabo", "darn", "de_railroad",
-  "dm_delve", "dm_dust", "dm_dust2", "dockingbay", "doublecross", "echo", "eden", "endcamp",
-  "endworld", "enix", "elixir", "farewell", "fling", "frenzied", "frenzy", "gasworks",
-  "havoc", "homeworld", "isotonic", "kabul", "last_call", "lambda_bunker", "lost_village",
-  "lost_village2", "moss", "no_remorse", "obsolete", "outcry", "olvidada_muerte", "pwrcore",
-  "rapidcore", "rebellion", "rats", "rustmill", "scary_1", "scary_2", "semonz", "stalkx",
-  "snark_pit", "stalkyard", "subtransit", "the_beach", "the_tube", "undertow", "undyz",
-  "urethane", "vengeance", "xbounce", "xbounce2"
+"agony","area51","awol","ag_aztec","ag_aztec2","ag_crossfire","ag_cbble","ag_hidden_lab","ag_inferno","ag_inferno2","ag_militia"
+  ,"ag_mirage","ag_nuke","ag_park","ag_italy","ag_train","ag_vertigo","battlegrounds","boot_camp","bounce","boot_campx","brave",
+  "cabrito","chaocity3","cliffside3","cold_faces","combat2","cyanidestalkyard","crossfire","datacore","dabo","datax","darn",
+  "dmc_q1dm3","dm_delve","dm_dust","dm_dust2","dockingbay","doublecross","echo","enchanted","eden","endcamp","endworld","enix",
+  "elixir","farewell","fling","frenzied","frenzy","gasworks","kabul","killbox_usa","hardtek","havoc","homeworld","hive","last_call",
+  "lambda_bunker","lost_village","lost_village2","moss","merlin","neocron","no_remorse","outcry","olvidada_muerte","pwrcore","rapidcore",
+  "rats","rustmill","isotonic","scary_1","semonz","sinister","stalkx","stalkx_1337","snark_pit","stalkyard","stalkx_amped","subtransit",
+  "tear","the_beach","undertow","undyz","urethane","vengeance","xbounce","xbounce2","ztalkerz"
+
 ];
 
 
