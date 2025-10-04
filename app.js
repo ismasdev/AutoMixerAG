@@ -89,12 +89,18 @@ startDrawButton.addEventListener("click", () => {
   const selectedMapPool = document.getElementById("map-pool").value; // Obtener selección de lista
 
   // ✅ Asegurar que la lista seleccionada se use correctamente
-  let maps;
-  if (selectedMapPool === "lmbda") {
-    maps = [...lmbdaMaps]; // Copia de la lista LMBDA Tournament
-  } else {
-    maps = [...defaultMaps]; // Copia de la lista original
-  }
+let maps;
+
+switch (selectedMapPool) {
+  case "lmbda":
+    maps = [...lmbdaMaps];
+    break;
+  case "wc":
+    maps = [...WcMaps];
+    break;
+  default:
+    maps = [...defaultMaps];
+}
 
   if (teams.length < 2) {
     alert("Se necesitan al menos 2 teams/players para realizar el mixer.");
