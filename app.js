@@ -21,15 +21,39 @@ const defaultMaps = [
 
 // Lista de mapas LMBDA Tournament
 const lmbdaMaps = [
-"agony","area51","awol","ag_aztec","ag_aztec2","ag_crossfire","ag_cbble","ag_hidden_lab","ag_inferno","ag_inferno2","ag_militia"
-  ,"ag_mirage","ag_nuke","ag_park","ag_italy","ag_train","ag_vertigo","battlegrounds","boot_camp","bounce","boot_campx","brave",
-  "cabrito","chaocity3","cliffside3","cold_faces","combat2","cyanidestalkyard","crossfire","datacore","dabo","datax","darn",
-  "dmc_q1dm3","dm_delve","dm_dust","dm_dust2","dockingbay","doublecross","echo","enchanted","eden","endcamp","endworld","enix",
-  "elixir","farewell","fling","frenzied","frenzy","gasworks","kabul","killbox_usa","hardtek","havoc","homeworld","hive","last_call",
-  "lambda_bunker","lost_village","lost_village2","moss","merlin","neocron","no_remorse","outcry","olvidada_muerte","pwrcore","rapidcore",
-  "rats","rustmill","isotonic","scary_1","semonz","sinister","stalkx","stalkx_1337","snark_pit","stalkyard","stalkx_amped","subtransit",
-  "tear","the_beach","undertow","undyz","urethane","vengeance","xbounce","xbounce2","ztalkerz"
+"agony", "area51", "arena2", "awol", "ag_ancient", "ag_anubis", "ag_aztec", "ag_aztec2", 
+"ag_cache", "ag_crossfire", "ag_cbble", "ag_hidden_lab", "ag_inferno", "ag_inferno2", 
+"ag_inferno2de", "ag_militia", "ag_mirage", "ag_nuke", "ag_park", "ag_italy", "ag_overpass", 
+"ag_train", "ag_vertigo", "battlegrounds", "boot_camp", "bounce", "boot_campx", "brave", 
+"cabrito", "chaocity3", "cliffside3", "cold_faces", "cold_faces2", "combat2", 
+"cyanidestalkyard", "crossfire", "datacore", "dabo", "datax", "darn", "dmc_q1dm3", 
+"dm_delve", "dm_dust", "dm_dust2", "dm_undergroundlab", "dockingbay", "doublecross", 
+"echo", "enchanted", "eden", "endcamp", "endworld", "enix", "elixir", "farewell", "fight", 
+"fling", "frenzied", "frenzy", "gasworks", "goldrush", "kabul", "killbox_usa", "hardtek", 
+"havoc", "homeworld", "hive", "hlk_ultimate_crossfire", "hl_pyrozone", "lacitrev", 
+"last_call", "lambda_bunker", "lost_village", "lost_village2", "moss", "morning_frost", 
+"merlin", "mist", "neocron", "no_remorse", "nowhere", "outcry", "olvidada_muerte", 
+"pwrcore", "radiator2", "rapidcore", "rapidcore_rebalanced", "rapidcore2", "rats", 
+"rebellion", "rtcbeta4", "rustmill", "isotonic", "scary_1", "semonz", "sinister", "stalkx", 
+"stalkx_1337", "snark_pit", "snake", "stalkyard", "stalkx_amped", "subtransit", "tear", 
+"the_beach", "tombraider", "undertow", "undyz", "urethane", "vengeance", "xbounce", 
+"xbounce_2", "xfire", "ztalkerz"
 
+];
+
+// Lista de mapas WC2025
+const WcMaps = [
+"ag_aztec", "ag_aztec2", "ag_crossfire", "ag_hidden_lab", "ag_inferno", "ag_italy", 
+"ag_park", "ag_mirage", "agony", "awol", "battlegrounds", "boot_camp", "boot_campx", 
+"bounce", "cabrito", "cold_faces", "crossfire", "cliffside3", "cyanidestalkyard", "dabo", 
+"darn", "datacore", "combat2", "doublecross", "dm_delve", "dm_dust", "dm_dust2", 
+"donkingbay", "echo", "eden", "elixir", "endcamp", "endworld", "enix", "farewell", 
+"fling", "frenzy", "frenzied", "gasworks", "havoc", "homeworld", "hl_pyrozone", 
+"isotonic", "kabul", "lambda_bunker", "last_call", "lost_village", "lost_village2", 
+"moss", "morning_frost", "no_remorse", "olvidada_muerte", "pwrcore", "outcry", "rats", 
+"rebellion", "rapidcore", "rustmill", "scary_1", "scary_2", "semonz", "snark_pit", 
+"stalkyard", "stalkx", "stalkx_amped", "subtransit", "tear", "the_beach", "undertow", 
+"undyz", "urethane", "vengeance", "xbounce", "xbounce_2" 
 ];
 
 
