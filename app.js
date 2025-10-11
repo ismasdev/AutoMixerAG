@@ -9,39 +9,43 @@ const teamList = document.getElementById("team-list"); // Lista de teams
 // Lista de teams
 let teams = [];
 
-// Lista original
-const mapListDefault = [
-  "Agony", "dabo", "farewell", "lost_village", "semonz", "ag_crossfire", "DARN", "fling",
-  "lost_village2", "snark_pit", "ag_hidden_lab", "datacore", "frenzy", "moss", "stalkx",
-  "boot_camp", "dm_dust2", "gasworks", "olvidada_muerte", "stalkyard", "bounce", "doublecross",
-  "havoc", "outcry", "subtransit", "cabrito", "echo", "homeworld", "rapidcore", "the_beach",
-  "cold_faces", "eden", "isotonic", "rats", "undertow", "COMBAT2", "elixir", "lambda_bunker",
-  "rustmill", "urethane", "crossfire", "endcamp", "last_call", "scary_1", "vengeance"
+// Lista Default (original)
+const defaultMaps = [
+  "Agony","dabo","farewell","lost_village","semonz","ag_crossfire","DARN","fling",
+  "lost_village2","snark_pit","ag_hidden_lab","datacore","frenzy","moss","stalkx",
+  "boot_camp","dm_dust2","gasworks","olvidada_muerte","stalkyard","bounce","doublecross",
+  "havoc","outcry","subtransit","cabrito","echo","homeworld","rapidcore","the_beach",
+  "cold_faces","eden","isotonic","rats","undertow","COMBAT2","elixir","lambda_bunker",
+  "rustmill","urethane","crossfire","endcamp","last_call","scary_1","vengeance"
 ];
 
-// Lista LMBDA
-const mapListLMBDA = [
-  "agony","awol","ag_aztec","ag_aztec2","ag_crossfire","ag_cbble","ag_hidden_lab","ag_park","ag_inferno",
-  "battlegrounds","boot_camp","bounce","boot_campx","cabrito","cold_faces","cyanidestalkyard","crossfire",
-  "datacore","dabo","darn","de_railroad","dm_delve","dm_dust","dm_dust2","dockingbay","doublecross","echo",
-  "eden","endcamp","endworld","enix","elixir","farewell","fling","frenzied","frenzy","gasworks","havoc",
-  "homeworld","isotonic","kabul","last_call","lambda_bunker","lost_village","lost_village2","moss","no_remorse",
-  "obsolete","outcry","olvidada_muerte","pwrcore","rapidcore","rebellion","rats","rustmill","scary_1","scary_2",
-  "semonz","stalkx","snark_pit","stalkyard","subtransit","the_beach","the_tube","undertow","undyz","urethane",
-  "vengeance","xbounce","xbounce2"
+// Lista LMBDA Tournament
+const lmbdaMaps = [
+  "agony","awol","ag_aztec","ag_aztec2","ag_crossfire","ag_cbble","ag_hidden_lab","ag_park",
+  "ag_inferno","battlegrounds","boot_camp","bounce","boot_campx","cabrito","cold_faces",
+  "cyanidestalkyard","crossfire","datacore","dabo","darn","de_railroad","dm_delve","dm_dust",
+  "dm_dust2","dockingbay","doublecross","echo","eden","endcamp","endworld","enix","elixir",
+  "farewell","fling","frenzied","frenzy","gasworks","havoc","homeworld","isotonic","kabul",
+  "last_call","lambda_bunker","lost_village","lost_village2","moss","no_remorse","obsolete",
+  "outcry","olvidada_muerte","pwrcore","rapidcore","rebellion","rats","rustmill","scary_1",
+  "scary_2","semonz","stalkx","snark_pit","stalkyard","subtransit","the_beach","the_tube",
+  "undertow","undyz","urethane","vengeance","xbounce","xbounce2"
 ];
 
-//  Lista OGHL WORLDCUP 2025
+// Lista OGHL WORLDCUP 2025
 const WcMaps = [
-  "ag_aztec","ag_aztec2","ag_crossfire","ag_hidden_lab","ag_inferno","ag_italy","ag_park","ag_mirage","agony",
-  "awol","battlegrounds","boot_camp","boot_campx","bounce","cabrito","cold_faces","crossfire","cliffside3",
-  "cyanidestalkyard","dabo","darn","datacore","combat2","doublecross","dm_delve","dm_dust","dm_dust2","donkingbay",
-  "echo","eden","elixir","endcamp","endworld","enix","farewell","fling","frenzy","frenzied","gasworks","havoc",
-  "homeworld","hl_pyrozone","isotonic","kabul","lambda_bunker","last_call","lost_village","lost_village2","moss",
-  "morning_frost","no_remorse","olvidada_muerte","pwrcore","outcry","rats","rebellion","rapidcore","rustmill",
-  "scary_1","scary_2","semonz","snark_pit","stalkyard","stalkx","stalkx_amped","subtransit","tear","the_beach",
-  "undertow","undyz","urethane","vengeance","xbounce","xbounce_2"
+  "ag_aztec","ag_aztec2","ag_crossfire","ag_hidden_lab","ag_inferno","ag_italy","ag_park",
+  "ag_mirage","agony","awol","battlegrounds","boot_camp","boot_campx","bounce","cabrito",
+  "cold_faces","crossfire","cliffside3","cyanidestalkyard","dabo","darn","datacore","combat2",
+  "doublecross","dm_delve","dm_dust","dm_dust2","donkingbay","echo","eden","elixir","endcamp",
+  "endworld","enix","farewell","fling","frenzy","frenzied","gasworks","havoc","homeworld",
+  "hl_pyrozone","isotonic","kabul","lambda_bunker","last_call","lost_village","lost_village2",
+  "moss","morning_frost","no_remorse","olvidada_muerte","pwrcore","outcry","rats","rebellion",
+  "rapidcore","rustmill","scary_1","scary_2","semonz","snark_pit","stalkyard","stalkx",
+  "stalkx_amped","subtransit","tear","the_beach","undertow","undyz","urethane","vengeance",
+  "xbounce","xbounce_2"
 ];
+
 
 
 
@@ -84,11 +88,12 @@ switch (selectedMapPool) {
     maps = [...lmbdaMaps];
     break;
   case "wc":
-    maps = [...WcMaps]; // ✅ Ya se usa correctamente acá
+    maps = [...WcMaps];
     break;
   default:
     maps = [...defaultMaps];
 }
+
 
 
   if (teams.length < 2) {
